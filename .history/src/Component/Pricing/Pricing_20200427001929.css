@@ -1,0 +1,45 @@
+h1{
+    margin: 50px 0px;
+}
+
+.jumbotron{
+    background-image: url("../../power-x-gym/Image & Icon/edgar-chaparro-sHfo3WOgGTU-unsplash.jpg");
+    background-size: cover;
+    padding: 300px;
+    color:white;
+    text-align: center;
+}
+
+.jumbotron h1{
+    font-weight: 700;
+    font-style: oblique;
+}
+
+.advance{
+    background-image: url("../../power-x-gym/Image & Icon/hipcravo-5UbIqV58CW8-unsplash.jpg");
+}
+
+.basic{
+    background-image: url("../../power-x-gym/Image & Icon/daniel-apodaca-WdoQio6HPVA-unsplash.jpg");
+}
+
+.beginner{
+    background-image: url("../../power-x-gym/Image & Icon/penguinuhh-8VI6WwEEEHw-unsplash.jpg");
+}
+
+.advance, .basic, .beginner{
+    background-size: cover;
+    margin-right: 5%;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    margin-left: 20px;
+}
+
+button{
+    padding: 10px 70px;
+    font-size: x-large;
+    font-weight: 700;
+    background-color: rgb(245, 207, 81);
+    margin-bottom: 20px;
+}

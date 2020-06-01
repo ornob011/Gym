@@ -1,0 +1,58 @@
+.program-controller{
+    background-image: url("../../power-x-gym/Image & Icon/edgar-chaparro-sHfo3WOgGTU-unsplash.jpg");
+    background-size: cover;
+    padding: 300px;
+    color:white;
+    text-align: center;
+}
+
+.program-controller h1{
+    font-weight: 700;
+    font-style: normal;
+}
+
+.yoga{
+    background-image: url("../../power-x-gym/Image & Icon/bruce-mars-gJtDg6WfMlQ-unsplash.png");
+}
+
+.cardio{
+    background-image: url("../../power-x-gym/Image & Icon/arthur-edelman-qfjuh4OLdxw-unsplash.jpg");
+}
+
+.psycho{
+    background-image: url("../../power-x-gym/Image & Icon/victor-freitas-WvDYdXDzkhs-unsplash.jpg");
+}
+
+.self{
+    background-image: url("../../power-x-gym/Image & Icon/baylee-gramling-5m4Z14SDL80-unsplash.jpg");
+}
+
+.advanced{
+    background-image: url("../../power-x-gym/Image & Icon/humphrey-muleba-LOA2mTj1vhc-unsplash.jpg");
+}
+
+.strength{
+    background-image: url("../../power-x-gym/Image & Icon/alora-griffiths-TuzrzArccvc-unsplash.jpg");
+}
+
+.yoga, .cardio, .psycho, .self, .advanced, .strength{
+    background-size: cover;
+    margin-right: 5%;
+    color: white;
+    padding-top: 250px;
+    padding-bottom: 100px;
+    margin-left: 20px;
+    margin-bottom: 50px;
+}
+
+.yoga a, .cardio a, .psycho a, .self a, .advanced a, .strength a{
+    border:1px thistle;
+    background-color: yellow;
+    padding:10px;
+    margin-top: 30px;
+    color: black;
+    position:relative;
+    left: 20%;
+    top: 450%;
+    margin-top:50%
+}
