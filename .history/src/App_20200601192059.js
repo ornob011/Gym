@@ -6,7 +6,7 @@ import Footer from './Component/Footer/Footer';
 import Programs from './Component/Programs/Programs';
 import Pricing from './Component/Pricing/Pricing';
 import ClassDescription from './Component/ClassDescription/ClassDescription';
-import Membership1 from './Component/Membership/Membership1';
+import Membership from './Component/Membership/Membership';
 import Payment from './Component/Payment/Payment';
 
 import {
@@ -41,7 +41,7 @@ function App() {
                     </Route>
 
                     <Route path="/membership/form/:plan">
-                        <Membership1></Membership1>
+                        <Membership></Membership>
                     </Route>
 
                     {/* <Route path="/membership/payment">
