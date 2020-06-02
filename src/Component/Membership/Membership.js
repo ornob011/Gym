@@ -114,11 +114,12 @@ const Membership = () => {
                             {errors.Post && <span>Required Field</span>}
                         </div>
                     </div>
+
                     <button id='bn' type="submit">Next</button>
                 </form>
             </div>
 
-            
+
             <section style={{ marginTop: '200px', display: info ? 'block' : 'none' }} className='container'>
                 <h1>Pay here via your credit card</h1>
                 <Elements stripe={stripePromise}>
