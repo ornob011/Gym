@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import "react-datepicker/dist/react-datepicker.css";
 import './Membership.css'
+
 import CheckoutForm from '../Payment/Payment';
 
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 
 import { useForm } from 'react-hook-form'
+
 
 const Membership = () => {
 
@@ -20,8 +22,14 @@ const Membership = () => {
     const [Country, setCountry] = useState('')
     const [City, setCity] = useState('')
     const [Postcode, setPost] = useState('')
-
     const { register, handleSubmit, watch, errors } = useForm()
+
+    const [toggle, setToggle] = useState(false);
+    const toggleState = () => {
+        setToggle(!toggle);
+    }
+
+
 
 
     const handleFirstName = (e) => {
@@ -81,7 +89,7 @@ const Membership = () => {
             City,
             Postcode
         }
-        fetch('http://localhost:4200/send', {
+        fetch('https://whispering-sierra-36611.herokuapp.com/send', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -105,6 +113,7 @@ const Membership = () => {
                 <div className="gym-member">
                     <div className="container">
                         <h1 className="display-4">YOUR GYM MEMBERSHIP</h1>
+
                     </div>
                 </div>
             </section>
@@ -186,7 +195,15 @@ const Membership = () => {
                 <form id="form-box" className="form-row">
                     <div className="form-group col-md-6">
                         <div className="form-check">
-                            <input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="true" />
+                            <input
+                                type="radio"
+                                id="switch_left"
+                                name="switchToggle"
+                                value="paypal"
+                                onChange={toggleState}
+                                checked={!toggle}
+                            />
+                            {/* <input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="checked"/> */}
                             <label className="font-weight-bold ml-3" for="exampleRadios1" id="credit-card-txt">Credit Card</label>
                             <p className="text-muted">Safe money transfer using your bank account. Visa, Master, Discover, American Express</p>
                         </div>
@@ -200,13 +217,21 @@ const Membership = () => {
                     <div className="form-row">
                         <div className="form-group col-md-6">
                             <div className="form-check">
-                                <input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="" />
+                                <input
+                                    type="radio"
+                                    id="switch_right"
+                                    name="switchToggle"
+                                    value='credit'
+                                    onChange={toggleState}
+                                    checked={toggle}
+                                />
+                                {/* <input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" /> */}
                                 <label className="font-weight-bold ml-3" for="exampleRadios1" id="credit-card-txt">PayPal</label>
                                 <p className="text-body">You will be redirected to PayPal website to complete your purchase securely</p>
                             </div>
                         </div>
                         <div className="form-group col-md-6 d-flex justify-content-end">
-                            <img src="" alt=""/>
+                            <img src="" alt="" />
                         </div>
                     </div>
                 </form>

@@ -13,7 +13,8 @@ import './Footer.css';
 const Footer = () => {
     return (
         <div className="foot">
-            <div className="footColumn"><h1>Power X</h1></div>
+            <div className="footColumn"><h1>Power X</h1>
+            </div>
             <div className="footColumn">
                 <h3> Need Help?</h3>
                 <ul>

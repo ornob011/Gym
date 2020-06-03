@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Payment.css'
+import PaySus from './PaySus.js'
 
 import {
     CardElement,
@@ -40,6 +41,7 @@ const CheckoutForm = (props) => {
             <CardElement />
             <button type="submit" disabled={!stripe}>
                 Pay</button>
+               
 
             {
                 paymentError && <p style={{ color: "red" }}>Payment Failed</p>
