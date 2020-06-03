@@ -7,15 +7,23 @@ import Programs from './Component/Programs/Programs';
 import Pricing from './Component/Pricing/Pricing';
 import ClassDescription from './Component/ClassDescription/ClassDescription';
 import Membership from './Component/Membership/Membership';
-
+import ReactGa from 'react-ga';
 import {
     BrowserRouter as Router,
     Switch,
     Route,
 } from "react-router-dom";
 
+function initializeAnalytics() {
+    ReactGa.initialize("UA-168440504-1");
+    ReactGa.pageview(window.location.pathname + window.location.search);
+
+}
 
 function App() {
+
+    initializeAnalytics();
+
     return (
         <div>
             <Header></Header>

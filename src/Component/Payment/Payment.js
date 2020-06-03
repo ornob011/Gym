@@ -5,31 +5,31 @@ import {
     CardElement,
     useStripe,
     useElements,
-  } from '@stripe/react-stripe-js';
+} from '@stripe/react-stripe-js';
 
 const CheckoutForm = (props) => {
     const stripe = useStripe();
     const elements = useElements();
 
-    const [perror, setPerror]= useState(null)
-    const [payment, setPayment]= useState(null)
+    const [paymentError, setPaymentError] = useState(null)
+    const [payment, setPayment] = useState(null)
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const {error, paymentMethod} = await stripe.createPaymentMethod({
-        type: 'card',
-        card: elements.getElement(CardElement),
+        const { error, paymentMethod } = await stripe.createPaymentMethod({
+            type: 'card',
+            card: elements.getElement(CardElement),
         });
-        if(error){
+        if (error) {
             setPayment(null);
-            setPerror(error)
+            setPaymentError(error)
             console.log(error)
         }
 
-        else{
-            setPerror(null)
+        else {
+            setPaymentError(null)
             setPayment(paymentMethod)
-            const paymentFinished= {id: paymentMethod.id, last4: paymentMethod.card.last4}
+            const paymentFinished = { id: paymentMethod.id, last4: paymentMethod.card.last4 }
             props.handlePlaceOrder(paymentFinished)
             console.log(paymentMethod)
         }
@@ -37,18 +37,21 @@ const CheckoutForm = (props) => {
 
     return (
         <form onSubmit={handleSubmit}>
-        <CardElement />
-        <button type="submit" disabled={!stripe}>
-            Pay
-        </button>
+            <CardElement />
+            <button type="submit" disabled={!stripe}>
+                Pay</button>
 
-        {
-            perror && <p style={{color: "red"}}>Payment Failed</p>
-        }
+            {
+                paymentError && <p style={{ color: "red" }}>Payment Failed</p>
+            }
+            {
+                payment && <p style={{ color: "green" }}>Payment Successful. Your Payment id: {payment.id}.
+                
+                Membership Created. An email has been sent to your inbox containing all the details.</p>
 
-        {
-            payment && <p style={{color: "green"}}>Payment Successful: your payment- {payment.id}</p>
-        }
+            }
+
+
         </form>
     );
 };
