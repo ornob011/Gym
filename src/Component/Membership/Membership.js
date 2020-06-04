@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import './Membership.css'
+import './Membership.scss'
 
 import CheckoutForm from '../Payment/Payment';
 
@@ -16,7 +17,7 @@ const Membership = () => {
     const [Last_Name, setLast] = useState('')
     const [Email, setEmail] = useState('')
     const [Phone, setPhone] = useState('')
-    const [Birth_Date, setBirth] = useState('')
+    const [Birth_Date, setBirth] = useState(new Date())
     const [Gender, setGender] = useState('')
     const [Address, setAddress] = useState('')
     const [Country, setCountry] = useState('')
@@ -29,7 +30,9 @@ const Membership = () => {
         setToggle(!toggle);
     }
 
-
+    const changeBirthdate = date => {
+        setBirth(date);
+    };
 
 
     const handleFirstName = (e) => {
@@ -46,10 +49,6 @@ const Membership = () => {
 
     const handlePhone = (e) => {
         setPhone(e.target.value)
-    }
-
-    const handleBirth = (e) => {
-        setBirth(e.target.value)
     }
 
     const handleGender = (e) => {
@@ -76,7 +75,8 @@ const Membership = () => {
     const [info, setInfo] = useState(null)
 
     const handlePlaceOrder = (e) => {
-        // e.preventDefault();
+        //e.preventDefault();
+
         const orderDetails = {
             First_Name,
             Last_Name,
@@ -89,7 +89,8 @@ const Membership = () => {
             City,
             Postcode
         }
-        fetch('https://whispering-sierra-36611.herokuapp.com/send', {
+        console.log(orderDetails);
+        fetch('https://pure-eyrie-14343.herokuapp.com/send', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -98,13 +99,14 @@ const Membership = () => {
             body: JSON.stringify(orderDetails)
         })
             .then(message => console.log("message"));
-        console.log(orderDetails);
+
     }
 
     const stripePromise = loadStripe('pk_test_Tcs5id0sHuiliQSYOCdEhbWN008lYcHxVF');
 
     const onSubmit = data => {
         setInfo(data);
+        console.log(data);
     }
 
     return (
@@ -150,7 +152,7 @@ const Membership = () => {
 
                         <div className="col-md-6 item">
                             <label htmlFor="">Date Of Birth </label> <br />
-                            <input onChange={handleBirth} required placeholder="dd/mm/yyyy" />
+                            <DatePicker dateFormat="MM/dd/yyyy" selected={Birth_Date} onChange={changeBirthdate} />
                         </div>
 
                         <div className="col-md-6 item">
@@ -204,7 +206,7 @@ const Membership = () => {
                                 checked={!toggle}
                             />
                             {/* <input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="checked"/> */}
-                            <label className="font-weight-bold ml-3" for="exampleRadios1" id="credit-card-txt">Credit Card</label>
+                            <label className="font-weight-bold ml-3" htmlFor="exampleRadios1" id="credit-card-txt">Credit Card</label>
                             <p className="text-muted">Safe money transfer using your bank account. Visa, Master, Discover, American Express</p>
                         </div>
                     </div>
@@ -225,21 +227,21 @@ const Membership = () => {
                                     onChange={toggleState}
                                     checked={toggle}
                                 />
-                                {/* <input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" /> */}
-                                <label className="font-weight-bold ml-3" for="exampleRadios1" id="credit-card-txt">PayPal</label>
+                                <label className="font-weight-bold ml-3" htmlFor="exampleRadios1" id="credit-card-txt">PayPal</label>
                                 <p className="text-body">You will be redirected to PayPal website to complete your purchase securely</p>
                             </div>
                         </div>
+
                         <div className="form-group col-md-6 d-flex justify-content-end">
-                            <img src="" alt="" />
+
+                            <img src="../../power-x-gym/Image & Icon/Bitmap.png" id="kl" alt="hh" />
                         </div>
                     </div>
                 </form>
                 <button id='bn' type="submit">Next</button>
-            </section >
-
-        </div >
-    );
-};
+            </section>
+        </div>
+    )
+}
 
 export default Membership;

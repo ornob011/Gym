@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './Payment.css'
-import PaySus from './PaySus.js'
+import './Payment.scss'
+
 
 import {
     CardElement,
@@ -9,6 +9,7 @@ import {
 } from '@stripe/react-stripe-js';
 
 const CheckoutForm = (props) => {
+
     const stripe = useStripe();
     const elements = useElements();
 
@@ -37,13 +38,17 @@ const CheckoutForm = (props) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <CardElement />
-            <button type="submit" disabled={!stripe}>
-                Pay</button>
-               
-
+        <div>
             {
+                !payment && <section style={{ margin: '20px', display: 'block' }} className='container'>
+                    <form onSubmit={handleSubmit}>
+
+                        <CardElement />
+                        <button type="submit" disabled={!stripe}>
+                            Pay</button>
+
+
+                        {/* {
                 paymentError && <p style={{ color: "red" }}>Payment Failed</p>
             }
             {
@@ -51,12 +56,29 @@ const CheckoutForm = (props) => {
                 
                 Membership Created. An email has been sent to your inbox containing all the details.</p>
 
+            } */}
+
+
+                    </form>
+                </section>
             }
 
+            {/* <section style={{ marginTop: '200px', display: info ? 'block' : 'none' }} className='container'> */}
+            <section >
+                {
+                    paymentError && <p style={{ color: "red" }}>Payment Failed</p>
+                }
 
-        </form>
-    );
-};
+                {
+                    payment && <p style={{ color: "green" }}>Payment Successful. Your Payment id: {payment.id}.
+
+                Membership Created. An email has been sent to your inbox containing all the details.</p>
+                }
+
+            </section>
+        </div>
+    )
+}
 
 
 export default CheckoutForm;

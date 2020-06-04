@@ -1,20 +1,23 @@
-import React from 'react';
+/* import React, {useState} from 'react';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.scss";
 
 const PaySus = () => {
+    const [dob, setDob] = useState(new Date());
+    const handleChange = date => {
+        setDob(date);
+      };
+    const handleSelect = date => {
+        setDob(date);
+      };
+
     return (
         <div>
             <h2>This is Paid</h2>
-            {/* {
-                paymentError && <p style={{ color: "red" }}>Payment Failed</p>
-            }
-            {
-                payment && <p style={{ color: "green" }}>Payment Successful. Your Payment id: {payment.id}.
-                
-                Membership Created. An email has been sent to your inbox containing all the details.</p>
+            <DatePicker selected={dob} onSelect={handleSelect} onChange={handleChange}/>
 
-            } */}
         </div>
     );
 };
 
-export default PaySus;
+export default PaySus; */

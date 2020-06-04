@@ -1,5 +1,5 @@
 import React from 'react';
-import './Home.css';
+import './Home.scss';
 
 import About from './About';
 import WhyUs from './WhyUs';

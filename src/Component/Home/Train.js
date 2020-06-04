@@ -1,5 +1,5 @@
 import React from 'react';
-import './Train.css';
+import './Train.scss';
 import img1 from '../../power-x-gym/Image & Icon/bruce-mars-gJtDg6WfMlQ-unsplash.png';
 import img2 from '../../power-x-gym/Image & Icon/arthur-edelman-qfjuh4OLdxw-unsplash.jpg';
 

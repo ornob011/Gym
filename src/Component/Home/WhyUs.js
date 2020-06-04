@@ -1,7 +1,7 @@
 import React from 'react';
 import cycle from '../../power-x-gym/Image & Icon/Group 88.png'
 import gift from '../../power-x-gym/Image & Icon/gift-2.png'
-import './WhyUs.css'
+import './WhyUs.scss'
 
 import abs from '../../power-x-gym/Image & Icon/Group 87.png'
 

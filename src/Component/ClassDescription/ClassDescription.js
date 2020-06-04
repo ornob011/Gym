@@ -1,8 +1,8 @@
 import React from 'react';
-import './ClassDescription.css'
+import './ClassDescription.scss'
 import { useParams } from 'react-router-dom';
 import tools from '../../power-x-gym/Image & Icon/humphrey-muleba-LOA2mTj1vhc-unsplash.jpg'
-import './ClassDescription.css'
+import './ClassDescription.scss'
 import check from '../../power-x-gym/Image & Icon/checkmark-square-2.png'
 
 const ClassDescription = () => {
@@ -97,7 +97,7 @@ const ClassDescription = () => {
             <section>
                 <div className='container'>
                     <div className='check3' >
-                        <img src={check} alt=""/>
+                        <img src={check} alt="" />
                     </div>
                 </div>
             </section>

@@ -8,7 +8,7 @@ import {
     faYoutube
 } from '@fortawesome/free-brands-svg-icons';
 
-import './Footer.css';
+import './Footer.scss';
 
 const Footer = () => {
     return (
