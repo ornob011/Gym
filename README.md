@@ -7,4 +7,4 @@ Technologies: react, react-stripe-js, axios, date-diffreact, mapbox-gl, react-ma
 [Live Site](https://aircnc011.netlify.app/)
 
 \
-[Back-End Code] (https://github.com/ornob011/Gym-Backend)
+[Back-End Code](https://github.com/ornob011/Gym-Backend)
