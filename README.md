@@ -4,6 +4,6 @@
 \
 Technologies: react, react-stripe-js, axios, date-diffreact, mapbox-gl, react-map-gl, react-ga, node.js, express.js, JWT, MongoDB, heroku, netlify.\
 \
-[Live Site](https://aircnc011.netlify.app/)
+[Live Site](https://project-gym.netlify.app/)
 \
 [Back-End Code](https://github.com/ornob011/Gym-Backend)
