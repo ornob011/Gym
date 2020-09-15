@@ -1,8 +1,10 @@
 # Gym
 
-### It's a MERN stack project where a user can rent a house in his preferred location. The website shows the available houses and requests user the rental fee if the user wants to rent.
+### Another Mern stack web application for a professional fitness center. The owner can display all of its available services
+and advertisements. Using this site a user can find his favorite fitness package and purchase them.
 \
-Technologies: react, react-stripe-js, axios, date-diffreact, mapbox-gl, react-map-gl, react-ga, node.js, express.js, JWT, MongoDB, heroku, netlify.\
+Technologies: : Javascript, React, Node.js, HTML, MongoDB, Heroku, MaterialUI, Bootstrap, Firebase, react-calendar,
+react-modal, react-router.\
 \
 [Live Site](https://project-gym.netlify.app/)
 \
